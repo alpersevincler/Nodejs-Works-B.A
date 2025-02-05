@@ -19,8 +19,16 @@
     "id": 3,
     "title": "Baslik-3",
     "author": "Yazar-3",
-    "year": 1950,
+    "year": 1953,
     "genre": "Dystopian",
     "pages": 113
+  },
+  {
+    "id": 4,
+    "title": "Baslik-4",
+    "author": "Yazar-4",
+    "year": 1950,
+    "genre": "Dystopian",
+    "pages": 114
   }
 ]
