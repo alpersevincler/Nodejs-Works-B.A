@@ -37,6 +37,29 @@ app.post("/books", (req, res) => {
 });
 
 
+// Kitap Bilgilerini Güncelleme (PUT /books/:id)
+app.put("/books/:id", (req, res) => {
+    const {id} = req.params;
+    const {title, author, year, genre, pages} = req.body;
+
+    let books = readData();
+
+    const findBook = books.find( (book) => book.id === Number(id) );
+
+    if(findBook) {
+        books = books.map((book) => {
+            if( book.id === Number(id) ) {
+                return {...book, title, author, year, genre, pages}
+            }
+            return book;
+        });
+        writeData(books);
+        res.json({ success: true, books });
+    } else {
+        res.json({ seccess: false, message: "Kitap bulunamadı" });
+    }
+});
+
 
 
 const PORT = 3001;

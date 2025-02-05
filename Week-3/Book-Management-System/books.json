@@ -25,9 +25,10 @@
   },
   {
     "id": 4,
-    "title": "Baslik-1",
-    "author": "Yazar-1",
+    "title": "Baslik-4",
+    "author": "Yazar-4",
     "year": 1950,
-    "genre": "Dystopian"
+    "genre": "Dystopian",
+    "pages": 112
   }
 ]
