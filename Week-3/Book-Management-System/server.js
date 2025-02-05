@@ -61,6 +61,19 @@ app.put("/books/:id", (req, res) => {
 });
 
 
+app.delete("/books/:id", (req, res) => {
+    const {id} = req.params;
+
+    let books = readData();
+
+    books = books.filter( (book) => book.id !== Number(id) );
+
+    writeData(books);
+
+    res.status(204).json(books);
+});
+
+
 
 const PORT = 3001;
 app.listen(PORT, () => { console.log(`Sunucu ${PORT} portunda çalışıyor...`); });
