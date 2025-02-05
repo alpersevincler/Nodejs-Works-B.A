@@ -31,6 +31,9 @@ app.get("/books", (req, res) => {
 app.post("/books", (req, res) => {
     const newBook = req.body;
     let books = readData();
+
+    
+
     books = [...books, newBook];
     writeData(books);
     res.json(books);
@@ -56,7 +59,7 @@ app.put("/books/:id", (req, res) => {
         writeData(books);
         res.json({ success: true, books });
     } else {
-        res.json({ seccess: false, message: "Kitap bulunamadı" });
+        res.status(404).json({ Message: "Kitap bulunamadı" });
     }
 });
 
@@ -66,11 +69,17 @@ app.delete("/books/:id", (req, res) => {
 
     let books = readData();
 
-    books = books.filter( (book) => book.id !== Number(id) );
+    // Belirtilen id'nin varlığını kontrol edebilmek için find metodundan gelen cevap findDeleteBook'a atandı
+    const findDeleteBook = books.find((book) => book.id === Number(id));
 
-    writeData(books);
-
-    res.status(204).json(books);
+    if(findDeleteBook) {
+        books = books.filter( (book) => book.id !== Number(id) );
+        writeData(books);
+        res.status(204).json(books);
+    } else {
+        res.status(404).json(books);
+    }
+    
 });
 
 
