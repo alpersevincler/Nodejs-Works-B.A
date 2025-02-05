@@ -32,11 +32,16 @@ app.post("/books", (req, res) => {
     const newBook = req.body;
     let books = readData();
 
-    
+    // Aynı başlığa sahip kitabın eklenip eklenmediğini kontrol edebilmek için find metodundan gelen cevap findTitle'a atandı
+    const findTitle = books.find((book) => book.title == newBook.title);
 
-    books = [...books, newBook];
-    writeData(books);
-    res.json(books);
+    if(findTitle) {
+        res.status(400).json({ Message: "Eklenmek istenen kitap zaten mevcut." })
+    } else {
+        books = [...books, newBook];
+        writeData(books);
+        res.json(books);
+    }
 });
 
 
