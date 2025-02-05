@@ -20,11 +20,23 @@ const writeData = (books) => {
     fs.writeFileSync(filePath, JSON.stringify(books, null, 2));
 };
 
-
+// Tüm Kitapları Listeleme (GET /books)
 app.get("/books", (req, res) => {
     const data = readData();
     res.json(data);
 });
+
+
+// Yeni Kitap Ekleme (POST /books)
+app.post("/books", (req, res) => {
+    const newBook = req.body;
+    let books = readData();
+    books = [...books, newBook];
+    writeData(books);
+    res.json(books);
+});
+
+
 
 
 const PORT = 3001;
