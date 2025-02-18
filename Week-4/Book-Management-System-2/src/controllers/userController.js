@@ -57,6 +57,7 @@ const registerUser = (req, res) => {
     const users = JSON.parse(fs.readFileSync(usersFilePath, "utf-8"));
     // Email kontrolü
     const existingUser = users.find((user) => user.email === newUser.email);
+    console.log("register = ", existingUser);
     if (existingUser) {
       return res.status(400).json({ message: "Bu email adresi zaten kayıtlı." });
     }
@@ -70,10 +71,30 @@ const registerUser = (req, res) => {
   }
 };
 
+// Yeni login fonksiyonu
+const loginUser = (req, res) => {
+  try {
+    const { email, password } = req.body;
+    const usersFilePath = path.join(__dirname, "..", "..", "users.json");
+    const users = JSON.parse(fs.readFileSync(usersFilePath, "utf-8"));
+    // Kullanıcı doğrulama
+    const user = users.find(
+      (user) => user.email === email && user.password === password
+    );
+    if (!user) {
+      return res.status(401).json({ message: "Geçersiz email veya şifre." });
+    }
+    res.status(200).json({ message: "Giriş başarılı!", user });
+  } catch (error) {
+    res.status(400).json({ message: error.message });
+  }
+};
+
 module.exports = {
   getAllUsers,
   createUser,
   updateUser,
   deleteUser,
-  registerUser
+  registerUser,
+  loginUser
 };
