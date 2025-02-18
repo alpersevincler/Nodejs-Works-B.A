@@ -2,6 +2,7 @@ const User = require("../models/User.js");
 
 const getAllUsers = (req, res) => {
   try {
+    // models klasörü altındaki User.js doyasının(User adında require ettik) içindeki finAll isimli metodu çalıştır ve oradan gelen cevabı book'a aktar
     const users = User.findAll();
     res.json(users);
   } catch (error) {

@@ -3,11 +3,14 @@ const path = require('path');
 
 class User {
   constructor() {
+    // books.json dosyasındaki verileri oku
     this.filePath = path.join(__dirname, '..', '..', 'data.json');
   }
 
   readData() {
+    // yukarıdaki constructor()'ın içerisindeki this.filePath ile tanımlanmış dosyayı oku
     const jsonData = fs.readFileSync(this.filePath);
+    // okunan dosyayı geri döndür
     return JSON.parse(jsonData);
   }
 
