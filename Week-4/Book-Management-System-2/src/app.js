@@ -12,6 +12,7 @@ const app = express();
 app.use(cors(corsOptions));
 app.use(express.json());
 app.use(express.urlencoded({ extended: false }));
+// Yapılan istekleri log'layan middleware
 app.use(logger);
 
 // Routes
@@ -26,6 +27,7 @@ app.get('/form', (req, res) => {
 });
 
 // Hata yakalama
+// Yukarıdakilerde hata alırsak bunu yakalayacağız ama alt satırlarda hata varsa bunu yakalayamayacağımızdan bu middleware'i en alt satıra yazdık
 app.use(errorHandler);
 
 module.exports = app; 
