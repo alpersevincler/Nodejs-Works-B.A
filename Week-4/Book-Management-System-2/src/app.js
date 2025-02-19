@@ -4,7 +4,7 @@ const path = require('path');
 const corsOptions = require('./config/corsConfig');
 const { logger } = require('./middleware/logEvents');
 const errorHandler = require('./middleware/errorHandler');
-const userRoutes = require('./routes/userRoutes');
+const bookRoutes = require('./routes/bookRoutes');
 const authRoutes = require('./routes/authRoutes');
 
 const app = express();
@@ -17,7 +17,8 @@ app.use(express.urlencoded({ extended: false }));
 app.use(logger);
 
 // Routes
-app.use('/api/users', userRoutes);
+app.use('/api/books', bookRoutes);
+// app.use('/api/users', userRoutes);
 app.use("/api/auth", authRoutes);
 
 // Static dosyalar
