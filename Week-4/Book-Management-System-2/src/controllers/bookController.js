@@ -25,8 +25,8 @@ const createBook = (req, res) => {
 
 const updateBook = (req, res) => {
   try {
-    const { id, email } = req.body;
-    const updatedBook = Book.update(id, { email });
+    const { id, email, age } = req.body;
+    const updatedBook = Book.update(id, { email, age });
     if (updatedBook) {
       res.json({ success: true, book: updatedBook });
     } else {
