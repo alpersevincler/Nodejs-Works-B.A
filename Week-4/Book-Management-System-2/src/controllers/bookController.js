@@ -40,7 +40,7 @@ const updateBook = (req, res) => {
 const deleteBook = (req, res) => {
   try {
     const { bookId } = req.params;
-    User.delete(bookId);
+    Book.delete(bookId);
     res.status(204).send();
   } catch (error) {
     res.status(400).json({ message: error.message });

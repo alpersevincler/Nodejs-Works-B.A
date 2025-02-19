@@ -6,7 +6,7 @@ const bookController = require('../controllers/bookController');
 router.get('/', bookController.getAllBooks);
 router.post('/', bookController.createBook);
 router.put('/', bookController.updateBook);
-router.delete('/', bookController.deleteBook);
+router.delete('/:bookId', bookController.deleteBook);
 
 // router.post('/', userController.createUser);
 // router.put('/', userController.updateUser);

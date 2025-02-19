@@ -18,18 +18,9 @@
     "email": "emreali@example.com"
   },
   {
-    "id": 1739953264818
-  },
-  {
     "id": 1739954281995,
     "name": "Abdur",
     "age": 44,
     "email": "abdur@example.com"
-  },
-  {
-    "id": 1739954486261,
-    "name": "Abdur-2",
-    "age": 44,
-    "email": "abdur-2@example.com"
   }
 ]

@@ -46,7 +46,7 @@ class Book {
 
   delete(id) {
     const books = this.readData();
-    const filteredBooks = users.filter((book) => book.id !== Number(id));
+    const filteredBooks = books.filter((book) => book.id !== Number(id));
     this.writeData(filteredBooks);
     return true;
   }
