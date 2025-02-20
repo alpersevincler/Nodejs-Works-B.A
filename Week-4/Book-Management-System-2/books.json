@@ -1,26 +1,41 @@
 [
   {
     "id": 1,
-    "name": "Ahmet",
-    "age": 25,
-    "email": "ahmet@example.com"
+    "title": "1984",
+    "author": "George Orwell",
+    "year": 1949,
+    "genre": "Dystopian",
+    "pages": 328
   },
   {
     "id": 2,
-    "name": "Ayşe",
-    "age": 30,
-    "email": "ayse@example.com"
+    "title": "Küçük Prens",
+    "author": "Antoine de Saint-Exupéry",
+    "year": 1943,
+    "genre": "Children's literature",
+    "pages": 96
   },
   {
     "id": 3,
-    "name": "Emre",
-    "age": 26,
-    "email": "emreali@example.com"
+    "title": "Baslik-3",
+    "author": "Yazar-3",
+    "year": 1953,
+    "genre": "Dystopian",
+    "pages": 113
   },
   {
-    "id": 1739954281995,
-    "name": "Abdur",
+    "id": 4,
+    "title": "Baslik-4",
+    "author": "Yazar-4",
+    "year": 1950,
+    "genre": "Dystopian",
+    "pages": 114
+  },
+  {
+    "id": 1740051167056,
+    "name": "Abdur-2",
     "age": 44,
-    "email": "abdur@example.com"
+    "email": "abdur-2@example.com",
+    "title": "Baslik-5"
   }
 ]

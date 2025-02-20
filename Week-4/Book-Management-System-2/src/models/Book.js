@@ -28,11 +28,18 @@ class Book {
     return this.readData().find((book) => book.id === Number(id));
   }
 
-  create(book) {
+  create(newBook) {
     const books = this.readData();
-    books.push(book);
+    
+    const findBook = books.find((book) => book.title == newBook.title);
+
+    if(findBook) {
+      return false;
+    }
+
+    books.push(newBook);
     this.writeData(books);
-    return book;
+    return newBook;
   }
 
   update(id, updatedData) {

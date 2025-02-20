@@ -14,13 +14,17 @@ const getAllBooks = (req, res) => {
 };
 
 const createBook = (req, res) => {
-  try {
-    const newBook = { id: Date.now(), ...req.body }; // Benzersiz ID oluştur
-    Book.create(newBook);
+  
+  const newBook = { id: Date.now(), ...req.body };
+  const findBookTitle = Book.create(newBook);
+
+  console.log("findTitle = ", findBookTitle);
+  if(!findBookTitle) {
+    res.status(400).json({ Message: "Eklenmek istenen kitap zaten mevcut." });
+  } else {
     res.status(201).json(newBook);
-  } catch (error) {
-    res.status(400).json({ message: error.message, status: "hello" });
   }
+  
 };
 
 const updateBook = (req, res) => {
