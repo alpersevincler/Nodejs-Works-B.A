@@ -29,8 +29,10 @@ const createBook = (req, res) => {
 
 const updateBook = (req, res) => {
   try {
-    const { id, email, age } = req.body;
-    const updatedBook = Book.update(id, { email, age });
+    const {bookId} = req.params;
+    const {title, author, year, genre, pages} = req.body;
+    const updatedBook = Book.update(bookId, { title, author, year, genre, pages });
+    console.log("updateBook updatedBook = ", updatedBook);
     if (updatedBook) {
       res.json({ success: true, book: updatedBook });
     } else {
@@ -44,8 +46,13 @@ const updateBook = (req, res) => {
 const deleteBook = (req, res) => {
   try {
     const { bookId } = req.params;
-    Book.delete(bookId);
-    res.status(204).send();
+    const deleteBook = Book.delete(bookId);
+    if(deleteBook) {
+      res.status(200).json({ Message: "Kitap başarıyla silindi !" });
+    }else {
+      res.status(404).json({ Message: "Silinmek istenen kitap bulunamadı !" });
+    }
+    
   } catch (error) {
     res.status(400).json({ message: error.message });
   }

@@ -44,18 +44,32 @@ class Book {
 
   update(id, updatedData) {
     const books = this.readData();
-    const updatedBooks = books.map((book) =>
-      book.id === Number(id) ? { ...book, ...updatedData } : book
-    );
-    this.writeData(updatedBooks);
-    return this.findById(id);
+    console.log("update books = ", books);
+    console.log("update id = ", id);
+
+    const findBook = books.find( (book) => book.id === Number(id) );
+    console.log("update findBook = ", findBook);
+
+    if(findBook) {
+      const updatedBooks = books.map((book) =>
+      book.id === Number(id) ? { ...book, ...updatedData } : book );
+      this.writeData(updatedBooks);
+      return updatedBooks;
+    }
+    return false;
+    // return this.findById(id);
   }
 
-  delete(id) {
+  delete(bookId) {
     const books = this.readData();
-    const filteredBooks = books.filter((book) => book.id !== Number(id));
-    this.writeData(filteredBooks);
-    return true;
+    const findDeleteBook = books.find((book) => book.id === Number(bookId));
+
+    if(findDeleteBook) {
+      const filteredBooks = books.filter((book) => book.id !== Number(bookId));
+      this.writeData(filteredBooks);
+      return true;
+    }
+    return false;
   }
 }
 
