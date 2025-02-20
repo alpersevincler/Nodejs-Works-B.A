@@ -13,7 +13,7 @@ const app = express();
 app.use(cors(corsOptions));
 app.use(express.json());
 app.use(express.urlencoded({ extended: false }));
-// Yapılan istekleri log'layan middleware
+// Yapılan istekleri log'layan middleware 
 app.use(logger);
 
 // Routes
