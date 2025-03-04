@@ -26,3 +26,10 @@ const totalOrder300 = customers.find((user) => {
 }).name;
 
 console.log(totalOrder300); //çıktı: Ahmet
+
+
+// ---Zor Soru: Şehir bazında toplam sipariş miktarlarını döndür.
+
+const cityOrdersTotals = customers.reduce((acc, user) => {acc[user.city] = (acc[user.city] || 0) + ( user.orders.reduce((total, order)  => total + order, 0) ); return acc}, {});
+
+console.log(cityOrdersTotals); //çıktı: { Ankara: 750, 'İstanbul': 350, 'İzmir': 800, Bursa: 0 }
