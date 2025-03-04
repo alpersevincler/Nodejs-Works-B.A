@@ -29,5 +29,13 @@
     "age": 44,
     "email": "abdur-2@example.com",
     "title": "Baslik-5"
+  },
+  {
+    "id": 1740063837778,
+    "title": "Baslik-4",
+    "author": "Yazar-4",
+    "year": 1953,
+    "genre": "Dystopian",
+    "pages": 113
   }
 ]
