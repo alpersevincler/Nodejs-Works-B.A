@@ -8,9 +8,6 @@ router.post('/', bookController.createBook);
 router.put('/:bookId', bookController.updateBook);
 router.delete('/:bookId', bookController.deleteBook);
 
-// router.post('/', userController.createUser);
-// router.put('/', userController.updateUser);
-// router.delete('/:userId', userController.deleteUser);
 
 
 module.exports = router; 

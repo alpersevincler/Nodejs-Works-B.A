@@ -8,7 +8,7 @@ class Book {
   }
 
   readData() {
-    // yukarıdaki constructor()'ın içerisindeki this.filePath ile tanımlanmış dosyayı oku
+    // yukarıdaki constructor()'ın içerisindeki this.filePath ile tanımlanmış dosyayı oku 
     const jsonData = fs.readFileSync(this.filePath);
     console.log("Book.js readData jsonData = ", jsonData);
     // okunan dosyayı geri döndür

@@ -6,4 +6,4 @@ app.listen(PORT, () => {
     console.log(`Sunucu ${PORT} portunda çalışıyor!`);
 });
 
-// İşlem sırası: server.js -> app.js -> routes/bookRoutes.js -> controllers/bookController -> models/Book.js
+// İşlem sırası: server.js -> app.js -> routes/bookRoutes.js -> controllers/bookController -> models/Book.js 

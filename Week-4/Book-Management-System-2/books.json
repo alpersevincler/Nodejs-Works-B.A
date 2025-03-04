@@ -31,11 +31,10 @@
     "title": "Baslik-5"
   },
   {
-    "id": 1740063837778,
-    "title": "Baslik-4",
-    "author": "Yazar-4",
-    "year": 1953,
-    "genre": "Dystopian",
-    "pages": 113
+    "id": 1740051165458,
+    "name": "Name-5",
+    "age": 35,
+    "email": "name-5@example.com",
+    "title": "Baslik-5"
   }
 ]

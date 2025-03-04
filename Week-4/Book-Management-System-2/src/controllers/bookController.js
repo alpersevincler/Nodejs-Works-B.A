@@ -4,7 +4,7 @@ const fs = require("fs");
 
 const getAllBooks = (req, res) => {
   try {
-    // models klasörü altındaki User.js doyasının(User adında require ettik) içindeki findAll isimli metodu çalıştır ve oradan gelen cevabı book'a aktar
+    // models klasörü altındaki User.js doyasının(User adında require ettik) içindeki findAll isimli metodu çalıştır ve oradan gelen cevabı book'a aktar 
     const books = Book.findAll();
     console.log("bookController getAllBooks books = ", books);
     res.json(books);
