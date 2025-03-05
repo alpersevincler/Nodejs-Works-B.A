@@ -56,3 +56,11 @@ userAgeTotalOrders =  [
   'Zeynep (28): 0 TL'
 ]
 */
+
+
+// ---Çok Çok Zor Soru: Tüm müşterilerin siparişlerini en yüksekten en düşüğe sıralayıp tek bir dizi olarak döndür.
+
+// flat metodu orders dizilerinin içindeki elemanları tek bir dizi şeklinde toplayacaktır
+const orderSorting = customers.map((user) => user.orders).flat().sort((a, b) => {return b - a});
+
+console.log("orderSorting = ", orderSorting); //çıktı: orderSorting =  [500, 300, 300, 200, 200, 150, 100, 100, 50]
