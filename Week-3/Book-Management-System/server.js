@@ -11,9 +11,15 @@ const filePath = "books.json";
 
 // books.json dosyasının içeriğini okuma işlemini yapan metot
 const readData = () => {
-    // readFileSync metodu ile filePath değişkeninin içindeki books.json dosyasının içeriğinıin okuma işlemi gerçekleştirildi
+   try {
+    // readFileSync metodu ile filePath değişkeninin içindeki books.json dosyasının içeriğinin okuma işlemi gerçekleştirildi
     const jsonData = fs.readFileSync(filePath);
     return JSON.parse(jsonData);
+   }catch(err) {
+    console.error("JsonData read error = ", err);
+    // Eğer dosyada kitap yoksa boş bir dizi dönecektir
+    return [];
+   }
 };
 
 const writeData = (books) => {

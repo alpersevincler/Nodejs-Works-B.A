@@ -30,5 +30,13 @@
     "year": 1950,
     "genre": "Dystopian",
     "pages": 114
+  },
+  {
+    "id": 5,
+    "title": "Baslik-5",
+    "author": "Yazar-5",
+    "year": 1955,
+    "genre": "Dystopian",
+    "pages": 225
   }
 ]
